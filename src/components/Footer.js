@@ -8,7 +8,8 @@ width: 100%;
 padding: 0px 40px; 
 display: flex; 
 align-items: center; 
-justify-content: space-between; 
+justify-content: center; 
+flex-direction: column; 
 position: fixed; 
 bottom: 0px; 
 `
