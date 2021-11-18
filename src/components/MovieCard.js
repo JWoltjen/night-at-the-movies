@@ -1,10 +1,24 @@
 import React from 'react'
+import styled from 'styled-components'; 
 
-function MovieCard() {
+const Container = styled.div`
+
+`
+
+const MovieTitle = styled.p`
+
+`
+
+const Image = styled.img`
+
+`
+
+function MovieCard({imdbID, Title, Poster}) {
     return (
-        <div>
-            
-        </div>
+        <Container>
+            <MovieTitle>{Title}</MovieTitle>
+            <Image src={Poster} alt='the movie poster'/>
+        </Container>
     )
 }
 
