@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import styled from 'styled-components'
 import MovieListing from './MovieListing'
 
@@ -11,7 +11,23 @@ const Container = styled.div`
     
 `
 
+
+
 function Home() {
+
+    const fetchMovies = async () => {
+        try {
+            const res = await fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=6216491d`)
+            const data = await res.json(); 
+            console.log(data)
+        } catch (error) {
+            console.log(error)
+        }
+       
+    }
+    useEffect(() => {
+        fetchMovies(); 
+    }, [])
     return (
         <Container>
             <Banner/>
