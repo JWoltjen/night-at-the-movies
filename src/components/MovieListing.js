@@ -4,6 +4,7 @@ import { getAllMovies } from '../features/movieSlice'
 
 function MovieListing() {
     const movies = useSelector(getAllMovies); 
+    console.log("these are teh movies", movies)
     return (
         <div>
             
