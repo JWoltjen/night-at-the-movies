@@ -1,5 +1,9 @@
-import API_KEY from '../../../.env'
+import axios from 'axios'; 
 
-const key = process.env.API_KEY; 
+const baseUrl = process.env.API_KEY; 
+
+export default axios.create({
+    baseURL
+})
 
 
