@@ -9,7 +9,9 @@ import MovieDetail from './components/MovieDetail'
 import styled from 'styled-components'
 
 const Container = styled.div`
-  margin: 0px 4px; 
+  display: flex; 
+  margin: 1rem; 
+  justify-content: center; 
 `
 function App() {
   return (
