@@ -9,18 +9,18 @@ height: 5rem;
 padding: 0px 40px; 
 display: flex; 
 align-items: center; 
-justify-content: space-between; 
+justify-content: space-around; 
 `
 
 const Logo = styled.p`
 color: #e9d8a6; 
-font-size: 20px; 
+font-size: 45px; 
 font-weight: 600; 
 `
 
 const UserImage = styled.img`
-height: 38px; 
-width: 38px; 
+height: 48px; 
+width: 48px; 
 `
 
 function Header() {

@@ -11,7 +11,6 @@ const Container = styled.div`
     gap: .5rem; 
 `
 
-
 function MovieListing() {
     const movies = useSelector(getAllMovies); 
     let renderMovies = ""; 
@@ -19,10 +18,12 @@ function MovieListing() {
     renderMovies = movies.Response === "True" ? (
         movies.Search.length > 0 &&
             movies.Search.map(movie => (
-               <MovieCard key={movie.imdbID} Title={movie.Title} Poster={movie.Poster}/> )
+               <MovieCard key={movie.imdbID} Title={movie.Title} Poster={movie.Poster} Year={movie.Year}/> )
     )) : (
         <div>Loading. . . </div>
     )
+
+
     return (
         <Container>
             {renderMovies}

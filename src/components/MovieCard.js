@@ -6,27 +6,32 @@ const MovieContainer = styled.div`
     align-items: center; 
     flex-direction: column; 
     background-color: #e9d8a6; 
-    height: 500px; 
+    height: 525px; 
     width: 325px; 
     border: 2px solid black; 
     border-radius: 5px; 
+    padding-bottom: 1rem; 
     margin-bottom: 2rem; 
+    object-fit: contain; 
+    overflow: hidden; 
 `
 
-const MovieTitle = styled.p`
-    
+const MovieTitle = styled.h2`
+    padding-top: .25rem; 
+    padding-bottom: .25rem; 
+    color: #005f73;
 `
 
 const Image = styled.img`
-    object-fit: contain; 
     border: .25px solid gray; 
+    
 `
 
 function MovieCard({imdbID, Title, Poster}) {
     return (
         <MovieContainer>
             <MovieTitle>{Title}</MovieTitle>
-            <Image src={Poster} alt='the movie poster'/>
+            <Image src={Poster} alt={Title}/>
         </MovieContainer>
     )
 }
