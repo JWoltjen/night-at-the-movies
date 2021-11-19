@@ -14,6 +14,12 @@ const MovieContainer = styled.div`
     margin-bottom: 2rem; 
     object-fit: contain; 
     overflow: hidden; 
+    transition: all 0.3s; 
+
+    &:hover{
+        transform: scale(1.1); 
+        transition: all 0.3s; 
+    }
 `
 
 const MovieTitle = styled.h2`

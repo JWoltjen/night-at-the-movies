@@ -4,7 +4,17 @@ import { getAllMovies, getAllShows } from '../features/movieSlice'
 import MovieCard from './MovieCard';
 import styled from 'styled-components'
 
+
 const Container = styled.div`
+    width: 100%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+`
+const SectionHeader = styled.h1`
+    padding: 2rem 1rem; 
+`
+const DisplayGrid = styled.div`
     display: grid; 
     width: 95%; 
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -36,12 +46,18 @@ function MovieListing() {
 
     return (
     <>
-        <Container>
+        <SectionHeader>
+            Movies
+        </SectionHeader>
+        <DisplayGrid>
             {renderMovies}
-        </Container>
-        <Container>
+        </DisplayGrid>
+        <SectionHeader>
+            Tv Shows
+        </SectionHeader>
+        <DisplayGrid>
             {renderShows}
-        </Container>
+        </DisplayGrid>
               
     </> 
             )
