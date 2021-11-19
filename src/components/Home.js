@@ -3,7 +3,8 @@ import styled from 'styled-components'
 import MovieListing from './MovieListing'
 import { useDispatch } from 'react-redux'
 import {
-    fetchAsyncMovies
+    fetchAsyncMovies, 
+    fetchAsyncShows
 } from '../features/movieSlice'
 
 
@@ -25,7 +26,8 @@ function Home() {
     
        
     useEffect(() => {
-       dispatch(fetchAsyncMovies())
+       dispatch(fetchAsyncMovies()); 
+       dispatch(fetchAsyncShows())
     }, [dispatch])
 
     return (

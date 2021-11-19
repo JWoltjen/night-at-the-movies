@@ -1,7 +1,7 @@
 import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
 
 export const fetchAsyncMovies = createAsyncThunk(
-        'movies/  fetchAsyncMovies', async ()=> {
+        'movies/fetchAsyncMovies', async ()=> {
         const movieText = "jaws"
            
                 const res = await fetch(`http://www.omdbapi.com/?apikey=6216491d&s=${movieText}&type=movie`)
@@ -9,8 +9,19 @@ export const fetchAsyncMovies = createAsyncThunk(
                 return data; 
     })
 
+
+export const fetchAsyncShows = createAsyncThunk(
+        'series/fetchAsyncShows', async ()=> {
+        const showText = "cop"
+           
+                const res = await fetch(`http://www.omdbapi.com/?apikey=6216491d&s=${showText}&type=series`)
+                const data = await res.json(); 
+                return data; 
+    })
+
 const initialState = {
-    movies:{}
+    movies:{}, 
+    shows: {}
 }
 
 const movieSlice = createSlice({
@@ -23,11 +34,18 @@ const movieSlice = createSlice({
     }, 
     extraReducers: {
         [fetchAsyncMovies.pending]: () => {
-            console.log("pending")
+            console.log("pending fetch of movies")
         }, 
         [fetchAsyncMovies.fulfilled]: (state, {payload}) => {
             console.log("fetched successfully"); 
             return {...state, movies: payload}
+        }, 
+        [fetchAsyncShows.pending]: (state, {payload}) => {
+            console.log("pending fetch of shows")
+        }, 
+        [fetchAsyncShows.fulfilled]: (state, {payload}) => {
+            console.log('fetched shows successfully'); 
+            return {...state, shows: payload}
         }
     }
 })
