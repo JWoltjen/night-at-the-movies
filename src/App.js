@@ -21,7 +21,7 @@ function App() {
       <Container>
         <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/movie/:imdbID" component={MovieDetail}/>
+            <Route path="/movie/imdbID" component={MovieDetail}/>
             <Route component={PageNotFound}/>
         </Switch>
       </Container>

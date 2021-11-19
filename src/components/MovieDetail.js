@@ -12,7 +12,7 @@ function MovieDetail() {
 
     useEffect(() => {
         dispatch(fetchAsyncMovieOrShowDetail(imdbID))
-        console.log(data)
+        console.log("this is the movieDetail data", data)
     }, [dispatch, imdbID])
     return (
         <div>

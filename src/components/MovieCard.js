@@ -35,12 +35,13 @@ const Image = styled.img`
     
 `
 
-function MovieCard({imdbID, Title, Poster, Year}) {
+function MovieCard(props) {
+    const {data} = props
     return (
-        <Link to={`/movie/${imdbID}` }>
+        <Link to={`/movie/${data.imdbID}` }>
         <MovieContainer>
-            <MovieTitle>{Title}</MovieTitle>
-            <Image src={Poster} alt={Title}/>
+            <MovieTitle>{data.Title}</MovieTitle>
+            <Image src={data.Poster} alt={data.Title}/>
         </MovieContainer>
         </Link>
     )

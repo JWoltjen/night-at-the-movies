@@ -21,7 +21,7 @@ export const fetchAsyncMovies = createAsyncThunk(
 
     export const fetchAsyncMovieOrShowDetail = createAsyncThunk(
         'movies/fetchAsyncMovieOrShowDetail', async (id)=> {
-                const res = await fetch(`http://www.omdbapi.com/?apikey=6216491d&i=${id}$Plot=full`)
+                const res = await fetch(`http://www.omdbapi.com/?apikey=6216491d&i=${id}&Plot=full`)
                 const data = await res.json(); 
                 return data; 
     })
