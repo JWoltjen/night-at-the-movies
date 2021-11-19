@@ -10,7 +10,7 @@ export const fetchAsyncMovies = createAsyncThunk(
     })
 
 
-export const fetchAsyncShows = createAsyncThunk(
+    export const fetchAsyncShows = createAsyncThunk(
         'series/fetchAsyncShows', async ()=> {
         const showText = "cop"
            
@@ -19,9 +19,17 @@ export const fetchAsyncShows = createAsyncThunk(
                 return data; 
     })
 
+    export const fetchAsyncMovieOrShowDetail = createAsyncThunk(
+        'series/fetchAsyncMovieOrShowDetail', async (id)=> {
+                const res = await fetch(`http://www.omdbapi.com/?apikey=6216491d&i_${id}$Plot=full`)
+                const data = await res.json(); 
+                return data; 
+    })
+
 const initialState = {
     movies:{}, 
-    shows: {}
+    shows: {}, 
+    selectedMovieOrShow: {}, 
 }
 
 const movieSlice = createSlice({
@@ -46,6 +54,10 @@ const movieSlice = createSlice({
         [fetchAsyncShows.fulfilled]: (state, {payload}) => {
             console.log('fetched shows successfully'); 
             return {...state, shows: payload}
+        }, 
+        [fetchAsyncMovieOrShowDetail.fulfilled]: (state, {payload}) => {
+            console.log('fetched shows successfully'); 
+            return {...state, selectedMovieOrShow: payload}
         }
     }
 })

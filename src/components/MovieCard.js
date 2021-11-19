@@ -39,7 +39,6 @@ function MovieCard({imdbID, Title, Poster, Year}) {
     return (
         <Link to={`/movie/${imdbID}` }>
         <MovieContainer>
-           
             <MovieTitle>{Title}</MovieTitle>
             <Image src={Poster} alt={Title}/>
         </MovieContainer>
