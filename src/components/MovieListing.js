@@ -6,7 +6,9 @@ import styled from 'styled-components'
 
 const Container = styled.div`
     display: grid; 
-    grid: 450px /auto auto auto; 
+    width: 95%; 
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: .5rem; 
 `
 
 
