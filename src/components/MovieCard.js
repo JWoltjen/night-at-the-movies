@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'; 
 
-const Container = styled.div`
+const MovieContainer = styled.div`
 
 `
 
@@ -15,10 +15,10 @@ const Image = styled.img`
 
 function MovieCard({imdbID, Title, Poster}) {
     return (
-        <Container>
+        <MovieContainer>
             <MovieTitle>{Title}</MovieTitle>
             <Image src={Poster} alt='the movie poster'/>
-        </Container>
+        </MovieContainer>
     )
 }
 

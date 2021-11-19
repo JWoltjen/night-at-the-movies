@@ -2,6 +2,13 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { getAllMovies } from '../features/movieSlice'
 import MovieCard from './MovieCard';
+import styled from 'styled-components'
+
+const Container = styled.div`
+    display: grid; 
+    grid: 450px /auto auto auto; 
+`
+
 
 function MovieListing() {
     const movies = useSelector(getAllMovies); 
@@ -15,12 +22,11 @@ function MovieListing() {
         <div>Loading. . . </div>
     )
     return (
-        <div>
-            <h2>Movies</h2>
-            <div>
-                {renderMovies}
-            </div>
-        </div>
+        <Container>
+            {renderMovies}
+        </Container>
+              
+       
             )
 }
 
