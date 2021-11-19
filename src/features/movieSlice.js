@@ -11,7 +11,7 @@ export const fetchAsyncMovies = createAsyncThunk(
 
 
     export const fetchAsyncShows = createAsyncThunk(
-        'series/fetchAsyncShows', async ()=> {
+        'movies/fetchAsyncShows', async ()=> {
         const showText = "cop"
            
                 const res = await fetch(`http://www.omdbapi.com/?apikey=6216491d&s=${showText}&type=series`)
@@ -20,8 +20,8 @@ export const fetchAsyncMovies = createAsyncThunk(
     })
 
     export const fetchAsyncMovieOrShowDetail = createAsyncThunk(
-        'series/fetchAsyncMovieOrShowDetail', async (id)=> {
-                const res = await fetch(`http://www.omdbapi.com/?apikey=6216491d&i_${id}$Plot=full`)
+        'movies/fetchAsyncMovieOrShowDetail', async (id)=> {
+                const res = await fetch(`http://www.omdbapi.com/?apikey=6216491d&i=${id}$Plot=full`)
                 const data = await res.json(); 
                 return data; 
     })
@@ -65,4 +65,5 @@ const movieSlice = createSlice({
 export const {addMovies} = movieSlice.actions; 
 export const getAllMovies = (state) => state.movies.movies
 export const getAllShows = (state) => state.movies.shows; 
+export const getSelectedMovieOrShow = (state) => state.movies.selectedMovieOrShow; 
 export default movieSlice.reducer 

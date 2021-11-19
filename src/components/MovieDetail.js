@@ -1,15 +1,19 @@
 import React, {useEffect} from 'react'
 import {useParams} from 'react-router'; 
 import styled from 'styled-components'; 
-import {useDispatch} from 'react-redux'; 
+import {useDispatch, useSelector} from 'react-redux'; 
+import { fetchAsyncMovieOrShowDetail, getSelectedMovieOrShow } from '../features/movieSlice';
 
 
 function MovieDetail() {
-    const {imdDB} = useParams(); 
+    const {imdbID} = useParams(); 
     const dispatch = useDispatch(); 
-    useEffect(() => {
+    const data = useSelector(getSelectedMovieOrShow); 
 
-    }, [])
+    useEffect(() => {
+        dispatch(fetchAsyncMovieOrShowDetail(imdbID))
+        console.log(data)
+    }, [dispatch, imdbID])
     return (
         <div>
             <h1>Hey you guys</h1>
