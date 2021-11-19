@@ -37,11 +37,13 @@ const Image = styled.img`
 
 function MovieCard({imdbID, Title, Poster, Year}) {
     return (
+        <Link to={`/movie/${imdbID}` }>
         <MovieContainer>
-            <Link to={`/movie/:${imdbID}` }/>
+           
             <MovieTitle>{Title}</MovieTitle>
             <Image src={Poster} alt={Title}/>
         </MovieContainer>
+        </Link>
     )
 }
 
