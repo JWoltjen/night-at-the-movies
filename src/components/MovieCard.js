@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'; 
+import {Link} from 'react-router-dom'; 
+
 
 const MovieContainer = styled.div`
     display: flex; 
@@ -33,9 +35,10 @@ const Image = styled.img`
     
 `
 
-function MovieCard({imdbID, Title, Poster}) {
+function MovieCard({imdbID, Title, Poster, Year}) {
     return (
         <MovieContainer>
+            <Link to={`/movie/:${imdbID}` }/>
             <MovieTitle>{Title}</MovieTitle>
             <Image src={Poster} alt={Title}/>
         </MovieContainer>
