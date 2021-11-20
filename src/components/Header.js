@@ -30,12 +30,26 @@ width: 48px;
 }
 `
 
+const InputContainer = styled.form`
+
+`
+
+const SearchInput = styled.input`
+    type: text; 
+    value={}; 
+    placeholder: "Search Movies or Shows"
+    onChange={handleChange}
+`
+
 function Header() {
     return (
             <Container>
                 <Link to="/">
                 <Logo>Night at the Movies</Logo>
                 </Link>
+                <InputContainer>
+                    <SearchInput/>
+                </InputContainer>
                 <UserImage src={user}/>
             </Container>
     )
