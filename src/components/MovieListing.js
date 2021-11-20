@@ -1,4 +1,5 @@
 import React from 'react'
+import Slider from 'react-slick'
 import { useSelector } from 'react-redux'
 import { getAllMovies, getAllShows } from '../features/movieSlice'
 import MovieCard from './MovieCard';
@@ -22,6 +23,13 @@ const DisplayGrid = styled.div`
 `
 
 function MovieListing() {
+    const settings = {
+        dots: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 5,
+        slidesToScroll: 3
+      };
     const movies = useSelector(getAllMovies); 
     const shows = useSelector(getAllShows); 
     let renderMovies = "";
@@ -50,13 +58,17 @@ function MovieListing() {
             Movies
         </SectionHeader>
         <DisplayGrid>
+            <Slider {...settings}>
             {renderMovies}
+            </Slider>
         </DisplayGrid>
         <SectionHeader>
             Tv Shows
         </SectionHeader>
         <DisplayGrid>
+            <Slider {...settings}>
             {renderShows}
+            </Slider>
         </DisplayGrid>
               
     </> 
