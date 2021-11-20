@@ -17,12 +17,10 @@ const SectionLeft = styled.div`
 const SectionRight = styled.div`
   
 `
-
 const MovieTitle = styled.h1`
     color: #e9d8a6;
     margin-bottom: 1rem; 
 `
-
 const MovieRating = styled.div`
     margin-bottom: 1rem; 
     padding-left: 3px;  
@@ -30,17 +28,26 @@ const MovieRating = styled.div`
         margin-right: 20px; 
     }
 `
-
 const MovieVotes = styled.p`
 
 `
-
 const MoviePlot = styled.p` 
     margin-bottom: 1rem; 
+    max-width: 900px; 
 
 `
 const MovieInfo = styled.p`
+    div span: first-child {
+    padding: 10px 0px; 
+    font-weight: 600px; 
+    width: 100px; 
+    color: #e9d8a6;
     display: inline-block; 
+    }
+
+    div span {
+    color: white; 
+    }
 `
 
 const Image = styled.img`
@@ -103,7 +110,6 @@ function MovieDetail() {
                     </div>
                </MovieInfo>
            </SectionLeft>
-
            <SectionRight>
            <Image src={data.Poster}/>
            </SectionRight>

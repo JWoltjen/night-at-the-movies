@@ -32,7 +32,7 @@ function Footer() {
     return (
         <Container>
             <Title>Created by Jeff Woltjen 2021</Title>
-            <Description>Leveraging React-Router and Redux Toolkit</Description>
+            <Description>Leveraging React-Router, Redux Toolkit and Styled Components</Description>
         </Container>
     )
 }
