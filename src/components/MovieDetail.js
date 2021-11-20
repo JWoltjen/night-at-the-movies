@@ -10,17 +10,23 @@ const MovieContainer = styled.div`
    margin: 3rem; 
 `
 const SectionLeft = styled.div`
-    
+    margin-right: 2rem; 
 `
 const SectionRight = styled.div`
   
 `
 
-const MovieTitle = styled.h2`
+const MovieTitle = styled.h1`
+    color: #e9d8a6;
+    margin-bottom: 1rem; 
 `
 
 const MovieRating = styled.div`
-
+    margin-bottom: 1rem; 
+    padding-left: 3px;  
+    span {
+        margin-right: 20px; 
+    }
 `
 
 const MovieVotes = styled.p`
@@ -28,11 +34,11 @@ const MovieVotes = styled.p`
 `
 
 const MoviePlot = styled.p` 
-
+    margin-bottom: 1rem; 
 
 `
 const MovieInfo = styled.p`
-
+    display: inline-block; 
 `
 
 const Image = styled.img`
@@ -54,10 +60,10 @@ function MovieDetail() {
            <MovieTitle>{data.Title}</MovieTitle>   
            <MovieRating>
                <span>
-                   IMDB Rating : {data.imdbVotes}
+                   IMDB Rating : {data.imdbVotes}     
                </span>
                <span>
-                   Runtime : {data.RunTime}
+                   Runtime: {data.Runtime}
                </span>
                <span>
                    Year: {data.Year}
