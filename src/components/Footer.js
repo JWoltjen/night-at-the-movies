@@ -12,27 +12,34 @@ justify-content: center;
 flex-direction: column; 
 position: fixed; 
 bottom: 0px; 
+
 `
 
 const Title = styled.h1`
 color: #e9d8a6; 
 font-size: 20px; 
 font-weight: 600; 
+@media screen and (max-width: 600px) {
+    font-size: 15px; 
+}
+   
 `
 
 const Description = styled.p`
 color: #e9d8a6; 
 font-size: 20px; 
 font-weight: 600; 
-
+@media screen and (max-width: 600px) {
+    font-size: 15px; 
+}
 `
 
 
 function Footer() {
     return (
         <Container>
-            <Title>This is a footer</Title>
-            <Description>Still just a footer</Description>
+            <Title>Created by Jeff Woltjen 2021</Title>
+            <Description>Leveraging React-Router, Redux Toolkit and Styled Components</Description>
         </Container>
     )
 }

@@ -19,7 +19,7 @@ const MovieContainer = styled.div`
     transition: all 0.3s; 
 
     &:hover{
-        transform: scale(1.1); 
+        transform: scale(1.025); 
         transition: all 0.3s; 
     }
 `

@@ -9,25 +9,32 @@ height: 5rem;
 padding: 0px 40px; 
 display: flex; 
 align-items: center; 
-justify-content: space-around; 
+justify-content: space-between; 
 `
 
 const Logo = styled.p`
 color: #e9d8a6; 
 font-size: 45px; 
 font-weight: 600; 
+@media screen and (max-width: 600px) {
+    font-size: 20px; 
+}
 `
 
 const UserImage = styled.img`
 height: 48px; 
 width: 48px; 
+@media screen and (max-width: 600px) {
+    height: 24px; 
+    width: 24px;  
+}
 `
 
 function Header() {
     return (
             <Container>
                 <Link to="/">
-                <Logo>Movie App</Logo>
+                <Logo>Night at the Movies</Logo>
                 </Link>
                 <UserImage src={user}/>
             </Container>
