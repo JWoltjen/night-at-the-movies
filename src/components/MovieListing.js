@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux'
 import { getAllMovies, getAllShows } from '../features/movieSlice'
 import MovieCard from './MovieCard';
 import styled from 'styled-components'
+import Settings from '../features/Settings'
 
 
 const Container = styled.div`
@@ -16,20 +17,11 @@ const SectionHeader = styled.h1`
     padding: 2rem 1rem; 
 `
 const DisplayGrid = styled.div`
-    display: grid; 
-    width: 95%; 
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: .5rem; 
+ 
 `
 
 function MovieListing() {
-    const settings = {
-        dots: false,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 5,
-        slidesToScroll: 3
-      };
+   
     const movies = useSelector(getAllMovies); 
     const shows = useSelector(getAllShows); 
     let renderMovies = "";
@@ -58,7 +50,7 @@ function MovieListing() {
             Movies
         </SectionHeader>
         <DisplayGrid>
-            <Slider {...settings}>
+            <Slider {...Settings}>
             {renderMovies}
             </Slider>
         </DisplayGrid>
@@ -66,7 +58,7 @@ function MovieListing() {
             Tv Shows
         </SectionHeader>
         <DisplayGrid>
-            <Slider {...settings}>
+            <Slider {...Settings}>
             {renderShows}
             </Slider>
         </DisplayGrid>
