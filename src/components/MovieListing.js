@@ -30,15 +30,15 @@ function MovieListing() {
     renderMovies = movies.Response === "True" ? (
         movies.Search.length > 0 &&
             movies.Search.map(movie => (
-               <MovieCard key={movie.imdbID} Title={movie.Title} Poster={movie.Poster} Year={movie.Year}/> )
+               <MovieCard key={movie.imdbID} data={movie}/> )
     )) : (
         <div>Loading. . . </div>
     )
 
     renderShows = shows.Response === "True" ? (
         shows.Search.length > 0 &&
-            shows.Search.map(movie => (
-               <MovieCard key={movie.imdbID} Title={movie.Title} Poster={movie.Poster} Year={movie.Year}/> )
+            shows.Search.map(show => (
+               <MovieCard key={show.imdbID} data={show}/> )
     )) : (
         <div>Loading. . . </div>
     )

@@ -5,6 +5,10 @@
     font-family: 'Urbanist', sans-serif;
 }
 
+h1, h2, h3, h4, p, span {
+    color: #e9d8a6; 
+}
+
 a {
     text-decoration: none;
 }
