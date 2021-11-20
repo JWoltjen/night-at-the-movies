@@ -9,7 +9,7 @@ height: 5rem;
 padding: 0px 40px; 
 display: flex; 
 align-items: center; 
-justify-content: space-around; 
+justify-content: space-between; 
 `
 
 const Logo = styled.p`
@@ -27,7 +27,7 @@ function Header() {
     return (
             <Container>
                 <Link to="/">
-                <Logo>Movie App</Logo>
+                <Logo>Night at the Movies</Logo>
                 </Link>
                 <UserImage src={user}/>
             </Container>

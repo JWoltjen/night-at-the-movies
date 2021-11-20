@@ -2,7 +2,9 @@ import React, {useEffect} from 'react'
 import {useParams} from 'react-router'; 
 import styled from 'styled-components'; 
 import {useDispatch, useSelector} from 'react-redux'; 
-import { fetchAsyncMovieOrShowDetail, getSelectedMovieOrShow } from '../features/movieSlice';
+import { fetchAsyncMovieOrShowDetail, 
+         getSelectedMovieOrShow, 
+        removeSelectedMovieOrShow } from '../features/movieSlice';
 
 const MovieContainer = styled.div`
    display: flex; 
@@ -51,7 +53,9 @@ function MovieDetail() {
 
     useEffect(() => {
         dispatch(fetchAsyncMovieOrShowDetail(imdbID))
-        console.log("yeeeey")
+        return () => {
+            dispatch(removeSelectedMovieOrShow()); 
+        }
     }, [dispatch, imdbID])
 
     return (
@@ -94,7 +98,7 @@ function MovieDetail() {
                         <span>{data.Language}</span>
                     </div>
                     <div>
-                        <span>Genre: </span>
+                        <span>Awards: </span>
                         <span>{data.Awards}</span>
                     </div>
                </MovieInfo>

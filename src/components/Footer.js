@@ -31,8 +31,8 @@ font-weight: 600;
 function Footer() {
     return (
         <Container>
-            <Title>This is a footer</Title>
-            <Description>Still just a footer</Description>
+            <Title>Created by Jeff Woltjen 2021</Title>
+            <Description>Leveraging React-Router and Redux Toolkit</Description>
         </Container>
     )
 }
