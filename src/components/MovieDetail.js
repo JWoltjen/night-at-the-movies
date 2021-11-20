@@ -2,37 +2,41 @@ import React, {useEffect} from 'react'
 import {useParams} from 'react-router'; 
 import styled from 'styled-components'; 
 import {useDispatch, useSelector} from 'react-redux'; 
-import movieSlice, { fetchAsyncMovieOrShowDetail, getSelectedMovieOrShow } from '../features/movieSlice';
+import { fetchAsyncMovieOrShowDetail, getSelectedMovieOrShow } from '../features/movieSlice';
 
 const MovieContainer = styled.div`
-    display: flex; 
-    align-items: center; 
-    flex-direction: column; 
-    background-color: #e9d8a6; 
-    height: 525px; 
-    width: 325px; 
-    border: 2px solid black; 
-    border-radius: 5px; 
-    padding-bottom: 1rem; 
-    margin-bottom: 2rem; 
-    object-fit: contain; 
-    overflow: hidden; 
-    transition: all 0.3s; 
+    
+`
 
-    &:hover{
-        transform: scale(1.1); 
-        transition: all 0.3s; 
-    }
+const SectionLeft = styled.div`
+    
+`
+
+const SectionRight = styled.div`
+  
+
 `
 
 const MovieTitle = styled.h2`
-    padding-top: .25rem; 
-    padding-bottom: .25rem; 
-    color: #005f73;
+`
+
+const MovieRating = styled.div`
+
+`
+
+const MovieVotes = styled.p`
+
+`
+
+const MoviePlot = styled.p` 
+
+
+`
+const MovieInfo = styled.p`
+
 `
 
 const Image = styled.img`
-    border: .25px solid gray; 
     
 `
 function MovieDetail() {
@@ -46,12 +50,55 @@ function MovieDetail() {
     }, [dispatch, imdbID])
 
     return (
-        <MovieContainer>
-            <MovieTitle>{data.Title}</MovieTitle>
-            <Image src={data.Poster} />
-        </MovieContainer>
-            
+        <>
+           <SectionLeft>
+           <MovieTitle>{data.Title}</MovieTitle>   
+           <MovieRating>
+               <span>
+                   IMDB Rating : {data.imdbVotes}
+               </span>
+               <span>
+                   Runtime : {data.RunTime}
+               </span>
+               <span>
+                   Year: {data.Year}
+               </span>
+           </MovieRating>
+           <MoviePlot>
+                   {data.Plot}
+           </MoviePlot>
+           <MovieInfo>
+                   <div>
+                        <span>Director: </span>
+                        <span>{data.Director}</span>
+                    </div>
+                    <div>
+                        <span>Stars: </span>
+                        <span>{data.Stars}</span>
+                    </div>
+                    <div>
+                        <span>Actors: </span>
+                        <span>{data.Actors}</span>
+                    </div>
+                    <div>
+                        <span>Genre: </span>
+                        <span>{data.Genre}</span>
+                    </div>
+                    <div>
+                        <span>Languages: </span>
+                        <span>{data.Language}</span>
+                    </div>
+                    <div>
+                        <span>Genre: </span>
+                        <span>{data.Awards}</span>
+                    </div>
+               </MovieInfo>
+           </SectionLeft>
 
+           <SectionRight>
+           <Image src={data.Poster}/>
+           </SectionRight>
+        </>
     )
 }
 
