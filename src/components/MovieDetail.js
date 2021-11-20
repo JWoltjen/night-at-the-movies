@@ -5,16 +5,15 @@ import {useDispatch, useSelector} from 'react-redux';
 import { fetchAsyncMovieOrShowDetail, getSelectedMovieOrShow } from '../features/movieSlice';
 
 const MovieContainer = styled.div`
-    
+   display: flex; 
+   flex-direction: row; 
+   margin: 3rem; 
 `
-
 const SectionLeft = styled.div`
     
 `
-
 const SectionRight = styled.div`
   
-
 `
 
 const MovieTitle = styled.h2`
@@ -50,7 +49,7 @@ function MovieDetail() {
     }, [dispatch, imdbID])
 
     return (
-        <>
+        <MovieContainer>
            <SectionLeft>
            <MovieTitle>{data.Title}</MovieTitle>   
            <MovieRating>
@@ -98,7 +97,7 @@ function MovieDetail() {
            <SectionRight>
            <Image src={data.Poster}/>
            </SectionRight>
-        </>
+        </MovieContainer>
     )
 }
 
