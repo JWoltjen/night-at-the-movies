@@ -23,11 +23,12 @@ const Container = styled.div`
 
 function Home() {
     const dispatch = useDispatch() 
-    
+    const movieText = "Jaws"
+    const showText = "Cop"
        
     useEffect(() => {
-       dispatch(fetchAsyncMovies()); 
-       dispatch(fetchAsyncShows())
+       dispatch(fetchAsyncMovies(movieText)); 
+       dispatch(fetchAsyncShows(showText))
     }, [dispatch])
 
     return (

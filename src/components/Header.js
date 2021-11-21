@@ -1,7 +1,12 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 import {Link} from 'react-router-dom'; 
 import user from '../images/user.png'
+import { useDispatch } from 'react-redux';
+import {
+    fetchAsyncMovies, 
+    fetchAsyncShows
+} from "../features/movieSlice"
 
 const Container = styled.div`
 background-color: #001219; 
@@ -30,27 +35,47 @@ width: 48px;
 }
 `
 
-const InputContainer = styled.form`
-
+const InputForm = styled.form`
+    margin: .5rem;
+    padding: .5rem; 
 `
 
-const SearchInput = styled.input`
-    type: text; 
-    value={}; 
-    placeholder: "Search Movies or Shows"
-    onChange={handleChange}
+const SearchInput = styled.input` 
+    
+`
+
+const SearchButton = styled.button`
+    height: 1.0rem; 
+    width: 3rem; 
 `
 
 function Header() {
+    const [term, setTerm] = useState("")
+    const dispatch = useDispatch(); 
+    const submitHandler = (e) => {
+        e.preventDefault();
+        dispatch(fetchAsyncMovies(term)) 
+        dispatch(fetchAsyncShows(term))
+        setTerm('');
+    }
+
     return (
             <Container>
                 <Link to="/">
                 <Logo>Night at the Movies</Logo>
                 </Link>
-                <InputContainer>
-                    <SearchInput/>
-                </InputContainer>
-                <UserImage src={user}/>
+                <InputForm onSubmit={submitHandler}>
+                    <SearchInput 
+                        type="text" 
+                        value={term}
+                        placeholder="Search movie or show"
+                        onChange={(e) => setTerm(e.target.value)}
+                    />
+                    <SearchButton 
+                        type="submit"
+                    />
+                </InputForm>
+                <UserImage src={user} alt="user profile image"/>
             </Container>
     )
 }
