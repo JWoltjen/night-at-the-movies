@@ -1,7 +1,8 @@
 # Night at the Movies
 
 
-http://recordit.co/KXzuuQtlHB.gif
+![http://recordit.gif](https://reccordit.co/KXzuuQtlHB.gif)
+
 
 This is a single-page application that lets the user search for movies or shows, and if a user clicks on a movie or show, is taken to an individual page that displays additional detailsa bout the movie or show. State is managed on the frontend with React-Redux and Redux Toolkit. 
 
