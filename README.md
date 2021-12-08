@@ -1,6 +1,6 @@
 # Night at the Movies
 
-![Recordit GIF](http://g.recordit.co/KXzuuQtlHB)
+![Recordit GIF](http://g.recordit.co/KXzuuQtlHB.gif)
 
 
 
@@ -17,4 +17,3 @@ With the movieSlice function you can focus on changing a single piece of the sta
 
 Thunks are a piece of middleware that makes asynchronous calls to an api. For redux, thunks are a pattern of writing functions with logic inside that can interact with Redux store's dispatch method. This application uses them to make asynchronous calls to the API which is storing a list of todos. 
 
-![reccordit.gif](https://recordit.co/E6EHHAgimH.gif)
