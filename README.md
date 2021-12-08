@@ -1,6 +1,6 @@
 # Night at the Movies
 
-![Recordit GIF](http://g.recordit.co/KXzuuQtlHB.gif)
+![Recordit GIF](http://g.recordit.co/KXzuuQtlHB)
 
 
 
